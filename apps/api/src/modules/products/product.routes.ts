@@ -5,9 +5,13 @@ import { Router } from "express";
 
 import * as controller from "./product.controller";
 
+import { validate } from "../../middlewares/validate.middleware";
+
+import { productSchema } from "./product.validation";
+
 const router = Router();
 
-router.post("/", controller.createProduct);
+router.post("/", validate(productSchema), controller.createProduct);
 
 router.get("/", controller.getProducts);
 
