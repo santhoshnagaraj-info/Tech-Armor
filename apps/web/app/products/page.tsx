@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getProducts } from "@/src/services/product.service";
 import { Product } from "@/src/types/product";
@@ -13,7 +14,7 @@ export default function ProductsPage() {
     async function fetchProducts() {
       try {
         const data = await getProducts();
-        console.log("Data: ",data);
+        console.log("Data : ",data);
         setProducts(data.data);
       } catch (error) {
         console.error("Failed to fetch products:", error);
@@ -29,13 +30,13 @@ export default function ProductsPage() {
       Products
     </h1>
 
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-4">
       {products.map((product) => (
         <div
           key={product._id}
           className="overflow-hidden rounded-xl bg-white shadow-md transition duration-300 hover:shadow-xl"
         >
-          <img
+          <Image
             src={product.imageUrl}
             alt={product.name}
             className="h-56 w-full object-cover"
