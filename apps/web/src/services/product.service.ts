@@ -1,10 +1,9 @@
 // src/services/product.service.ts
 
+import api from "@/src/libs/axios";
 
 export const getProducts = async () => {
-  const response = await fetch(
-    "http://localhost:5000/api/products/"
-  );
+  const response = await api.get("/products");
 
-  return response.json();
+  return response.data;
 };
