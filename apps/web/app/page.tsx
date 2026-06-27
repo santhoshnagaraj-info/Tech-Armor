@@ -1,5 +1,7 @@
-import Image from "next/image";
-import ProductsPage from "./products/page";
+// src/components/product/ProductForm.tsx   
+
+
+import ProductsPage from "@/src/components/product/ProductForm";
 
 export default function Home() {
   return (
