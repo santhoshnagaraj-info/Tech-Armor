@@ -1,9 +1,24 @@
-"use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { getProducts } from "@/src/services/product.service";
-import { Product } from "@/src/types/product";
+import ProductsPage from "@/src/components/products/ProductForm";
+
+export default function Home() {
+  return (
+    <div className="items-center justify-center bg-zinc-50 font-sans dark:bg-black ">
+      Home Page
+      <ProductsPage/>
+
+    </div>
+  );
+}
+
+
+
+// "use client";
+
+// import Image from "next/image";
+// import { useEffect, useState } from "react";
+// import { getProducts } from "@/src/services/product.service";
+// import { Product } from "@/src/types/product";
 
 
 

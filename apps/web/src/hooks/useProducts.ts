@@ -1,4 +1,5 @@
 "use client";
+// src/hooks/useProducts.ts   
 
 import { useEffect, useState } from "react";
 import { getProducts } from "@/src/services/product.service";
