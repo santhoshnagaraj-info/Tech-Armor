@@ -8,7 +8,7 @@ export default function ProductCard({ _id, name, categories, image, description,
     <div key={_id} className="group flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-white/70 shadow-sm hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
       {/* Structural Image Container matching the high-end showcase style */}
       <div className="h-64 relative bg-gray-50 flex items-center justify-center p-0 overflow-hidden">
-        <Image  src={image}  alt={name}  width={800}  height={400}  className="object-contain transition-transform duration-500 group-hover:scale-105"/>
+        <Image  src={image}  alt={name}  width={800}  height={400} priority className="object-contain transition-transform duration-500 group-hover:scale-105"/>
          
         {/* Absolute Badge Format */}
         <div className="absolute top-4 right-4">
