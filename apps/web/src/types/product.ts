@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   description: string;
   categories: string;    // change to catagories if that's what your API returns
-  imageUrl: string;
+  image: string;
   price: number;
 }
 
