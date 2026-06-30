@@ -1,10 +1,9 @@
 
 import ProductsPage from "@/src/components/products/ProductForm";
 
-export default function Home() {
+export default function ProductPage() {
   return (
     <div className="items-center justify-center bg-zinc-50 font-sans dark:bg-black ">
-      Home Page
       <ProductsPage/>
 
     </div>

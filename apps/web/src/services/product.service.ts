@@ -13,3 +13,25 @@ export const getProducts = async (): Promise<ProductsResponse["data"]> => {
 };
 
 
+export const getProduct = async (id: string) => {
+  const { data } = await api.get(`/products/${id}`);
+  return data;
+};
+
+
+export const createProduct = async ( product: ProductsResponse ) => {
+  const { data } = await api.post( "/products", product);
+  return data;
+};
+
+
+export const updateProduct = async ( id: string, product: ProductsResponse ) => {
+  const { data } = await api.put( `/products/${id}`, product);
+  return data;
+};
+
+
+export const deleteProduct = async ( id: string ) => { 
+  const { data } = await api.delete(`/products/${id}`);
+  return data;
+};
