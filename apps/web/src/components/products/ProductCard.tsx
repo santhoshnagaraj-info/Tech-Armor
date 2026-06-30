@@ -3,9 +3,9 @@
 import { Product } from "@/src/types/product";
 import Image from "next/image";
 
-export default function ProductCard({ _id, name, categories, image, description, price }: Product) {
+export default function ProductCard({ name, categories, image, description, price }: Product) {
   return (
-    <div key={_id} className="group flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-white/70 shadow-sm hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
+    <div className="group flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-white/70 shadow-sm hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
       {/* Structural Image Container matching the high-end showcase style */}
       <div className="h-64 relative bg-gray-50 flex items-center justify-center p-0 overflow-hidden">
         <Image  src={image}  alt={name}  width={800}  height={400} priority className="object-contain transition-transform duration-500 group-hover:scale-105"/>
@@ -22,20 +22,24 @@ export default function ProductCard({ _id, name, categories, image, description,
         <p className="text-gray-600 font-normal text-sm mb-4 line-clamp-1">{description}</p>
 
         {/* Unified Bottom Row Grid Structure */}
-        <div className="mt-auto pt-2">
-          <div className="flex items-center justify-between mb-4"> <span className="text-2xl font-black text-green-600 tracking-tighter"> ₹{price} </span> </div>
+        <div className="mt-auto pt-2 grid grid-cols-2 gap-3">
+          <div className="flex items-center justify-between m-1"> <span className="text-2xl font-black text-green-600 tracking-tighter"> ₹{price} </span> </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          {/* <div className="grid grid-cols-2 gap-3">
             <button className="bg-slate-50 border border-slate-200 text-gray-700 font-medium py-2.5 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all active:scale-95 text-xs uppercase tracking-wider">
               Details
-            </button>
+            </button> */}
             <button className="bg-blue-600 text-white font-medium py-2.5 rounded-lg hover:bg-blue-700 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all active:scale-95 text-xs uppercase tracking-wider">
               Add To Cart
             </button>
-          </div>
+          {/* </div> */}
         </div>
 
       </div>
     </div>
   );
 }
+
+
+
+

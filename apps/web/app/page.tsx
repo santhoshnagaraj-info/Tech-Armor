@@ -5,8 +5,8 @@ import ProductsPage from "@/src/components/products/ProductForm";
 
 export default function Home() {
   return (
-    <div className="items-center justify-center bg-zinc-50 font-sans dark:bg-black ">
-      Home Page
+    <div className="bg-zinc-50 dark:bg-black ">
+      <nav className="p-4 text-3xl text-center"> Home Page</nav>
       <ProductsPage/>
 
     </div>
