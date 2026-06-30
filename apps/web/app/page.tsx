@@ -1,7 +1,7 @@
 // src/components/product/ProductForm.tsx   
 
 
-import ProductsPage from "@/src/components/products/ProductForm";
+import ProductsPage from "./products/page";
 
 export default function HomePage() {
   return (
