@@ -17,7 +17,7 @@ export default function ProductCard({ name, categories, image, description, pric
       </div>
 
       {/* Info Body Container */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col">
         <h2 className="text-xl font-semibold text-gray-800 mb-1 truncate">{name}</h2>
         <p className="text-gray-600 font-normal text-sm mb-4 line-clamp-1">{description}</p>
 
