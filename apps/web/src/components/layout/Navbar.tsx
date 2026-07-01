@@ -28,7 +28,7 @@ const icons = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-[#050b16]/95 backdrop-blur-lg">
+    <header id="/" className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-[#050b16]/95 backdrop-blur-lg">
       {/* Top Navbar */}
       <Container>
         <div className="flex h-20 items-center justify-between">
