@@ -1,6 +1,6 @@
 // src/services/product.service.ts
 
-import api from "@/src/libs/axios";
+import api from "@/src/lib/axios";
 import { ProductsResponse } from "@/src/types/product"; // 🚀 WHERE TO IMPORT IT
 
 
