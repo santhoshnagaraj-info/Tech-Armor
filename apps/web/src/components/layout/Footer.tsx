@@ -4,7 +4,7 @@ import Container from "../ui/Container";
 export default function Footer() {
   return (
     <footer id="about" className="border-t border-cyan-900/30 bg-[#050b16]">
-      <Container className="py-16">
+      <Container className="pt-3">
         <div className="grid gap-12 md:grid-cols-4">
 
           {/* Brand */}
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-cyan-900/30 pt-8 text-center text-sm text-gray-500">
+        <div className="m-2 border-t border-cyan-900/30 p-2 text-center text-sm text-gray-500">
           © 2025 TECH_ARMOR. All rights reserved.
         </div>
       </Container>
