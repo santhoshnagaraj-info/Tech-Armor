@@ -24,7 +24,7 @@ const icons = [
     <div className="border-t border-cyan-900/30">
         <Container>
             {/* Category Navigation */}
-            <div className="flex h-9 w-fit items-center justify-center gap-10 overflow-x-auto whitespace-nowrap">
+            <div className="flex h-9 items-center justify-center gap-10 overflow-x-auto whitespace-nowrap">
                 {CATEGORY_LINKS.map((item, index) => {
                     const Icon = icons[index];
                     return (
