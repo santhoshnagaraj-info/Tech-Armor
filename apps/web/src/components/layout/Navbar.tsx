@@ -11,10 +11,10 @@ import Category from "./Category";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-transparent backdrop-blur-xs">
+    <header className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-transparent backdrop-blur-lg">
       {/* Top Navbar */}
       <Container>
-        <div className="flex h-14 items-center justify-between">
+        <div className="flex h-13 items-center justify-between">
           <Logo />
 
           <NavMenu />
