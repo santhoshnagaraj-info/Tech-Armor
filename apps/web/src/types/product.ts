@@ -5,6 +5,8 @@ export interface Product {
   categories: string;    // change to catagories if that's what your API returns
   image: string;
   price: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
 

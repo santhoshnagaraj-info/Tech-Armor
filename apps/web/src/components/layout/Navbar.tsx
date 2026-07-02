@@ -11,7 +11,7 @@ import Category from "./Category";
 
 export default function Navbar() {
   return (
-    <header id="/" className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-[#050b16]/95 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-transparent backdrop-blur-xs">
       {/* Top Navbar */}
       <Container>
         <div className="flex h-14 items-center justify-between">
@@ -40,9 +40,7 @@ export default function Navbar() {
 
       {/* Category Navigation */}
       <div className="border-t border-cyan-900/30 bg-transparent">
-        <Container>
           <Category />
-        </Container>
       </div>
     </header>
   );
