@@ -1,37 +1,20 @@
 "use client";
 
-import {
-  Search,
-  ShoppingCart,
-  UserCircle,
-  Headphones,
-  Smartphone,
-  BatteryCharging,
-  Shield,
-  Zap,
-  Radio,
-} from "lucide-react";
+import { Search, ShoppingCart, UserCircle, } from "lucide-react";
 
 import Logo from "./logo";
 import NavMenu from "./NavMenu";
 import Container from "../ui/Container";
-import { CATEGORY_LINKS } from "@/src/lib/navigation";
+import Category from "./Category";
 
-const icons = [
-  Headphones,
-  Smartphone,
-  BatteryCharging,
-  Zap,
-  Radio,
-  Shield,
-];
+
 
 export default function Navbar() {
   return (
     <header id="/" className="sticky top-0 z-50 w-full border-b border-cyan-900/40 bg-[#050b16]/95 backdrop-blur-lg">
       {/* Top Navbar */}
       <Container>
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-14 items-center justify-between">
           <Logo />
 
           <NavMenu />
@@ -56,24 +39,9 @@ export default function Navbar() {
       </Container>
 
       {/* Category Navigation */}
-      <div className="border-t border-cyan-900/30 bg-[#071526]">
+      <div className="border-t border-cyan-900/30 bg-transparent">
         <Container>
-          <div className="flex h-14 items-center justify-center gap-10 overflow-x-auto whitespace-nowrap">
-            {CATEGORY_LINKS.map((item, index) => {
-              const Icon = icons[index];
-
-              return (
-                <button
-                  key={item}
-                  className="flex items-center gap-2 text-sm text-gray-300 transition hover:text-cyan-400"
-                >
-                  <Icon size={16} />
-
-                  {item}
-                </button>
-              );
-            })}
-          </div>
+          <Category />
         </Container>
       </div>
     </header>

@@ -25,3 +25,5 @@ export const CATEGORY_LINKS = [
   "MagSafe",
   "Protection",
 ];
+
+
