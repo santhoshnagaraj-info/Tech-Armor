@@ -1,11 +1,12 @@
 
 import ProductsPage from "@/src/components/products/ProductGrid";
-
+import SearchBar from "@/src/components/search/SearchBar";
 
 export default function ProductPage() {
     return (
         <>
         <ProductsPage/>
+        <SearchBar/>
         </>
     )
 }

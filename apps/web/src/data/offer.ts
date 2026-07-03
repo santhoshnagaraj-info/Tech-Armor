@@ -13,7 +13,7 @@ export const offers: Offer[] = [
 
     buttonText: "Claim Bundle",
 
-    expiresAt: "2025-12-31T23:59:59",
+    expiresAt: "2026-07-05T23:59:59",
 
     discount: 30,
 
