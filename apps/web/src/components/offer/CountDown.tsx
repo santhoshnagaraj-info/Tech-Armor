@@ -20,13 +20,9 @@ export default function Countdown({ expiresAt }: Props) {
     }
 
     const hours = Math.floor(difference / (1000 * 60 * 60));
-    const minutes = Math.floor(
-      (difference % (1000 * 60 * 60)) / (1000 * 60)
-    );
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 
-    const seconds = Math.floor(
-      (difference % (1000 * 60)) / 1000
-    );
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     return {
       h: String(hours).padStart(2, "0"),

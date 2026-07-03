@@ -11,7 +11,7 @@ interface Props {
 
 export default function OfferBanner({ offer }: Props) {
   return (
-    <section className="py-9 bg-[#071526]">
+    <section id="offer" className="py-9 bg-[#071526]">
       <Container>
         <div className="overflow-hidden rounded-3xl border border-cyan-500/40 bg-[#0b1b2e]">
           <div className="grid items-center lg:grid-cols-2">

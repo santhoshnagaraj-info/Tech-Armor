@@ -1,5 +1,14 @@
 
+import ProductsPage from "@/src/components/products/ProductGrid";
 
+
+export default function ProductPage() {
+    return (
+        <>
+        <ProductsPage/>
+        </>
+    )
+}
 
 
 
