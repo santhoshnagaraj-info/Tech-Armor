@@ -11,18 +11,18 @@ interface Props {
 
 export default function OfferBanner({ offer }: Props) {
   return (
-    <section className="py-12 bg-[#071526]">
+    <section className="py-9 bg-[#071526]">
       <Container>
         <div className="overflow-hidden rounded-3xl border border-cyan-500/40 bg-[#0b1b2e]">
           <div className="grid items-center lg:grid-cols-2">
             {/* Left */}
 
-            <div className="p-3 lg:p-10">
+            <div className="p-2 lg:p-5">
               <span className="rounded-full bg-cyan-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[2px] text-cyan-400">
                 Save {offer.discount}%
               </span>
 
-              <h2 className="mt-4 text-5xl font-black text-white">
+              <h2 className="mt-4 text-4xl font-black text-white">
                 {offer.title}
               </h2>
 
@@ -41,14 +41,14 @@ export default function OfferBanner({ offer }: Props) {
 
             {/* Right */}
 
-            <div className="relative flex h-[450px] items-center justify-center bg-gradient-to-br from-[#08131f] via-[#0a1b2e] to-[#071526]">
+            <div className="relative flex h-[300px] items-center justify-center bg-gradient-to-br from-[#08131f] via-[#0a1b2e] to-[#071526]">
               <div className="absolute h-80 w-80 rounded-full bg-cyan-400/20 blur-[120px]" />
 
               <Image
                 src={offer.image}
                 alt={offer.title}
-                width={700}
-                height={700}
+                width={650}
+                height={650}
                 className="relative object-contain"
               />
             </div>

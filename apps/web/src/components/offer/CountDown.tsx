@@ -47,7 +47,7 @@ export default function Countdown({ expiresAt }: Props) {
 
   return (
     <div>
-      <p className="text-4xl font-bold text-white">
+      <p className="text-3xl font-bold text-white">
         {time.h}:{time.m}:{time.s}
       </p>
 

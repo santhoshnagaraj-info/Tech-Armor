@@ -4,8 +4,8 @@ import Container from "../ui/Container";
 export default function Footer() {
   return (
     <footer id="about" className="border-t border-cyan-900/30 bg-[#050b16]">
-      <Container className="pt-3">
-        <div className="grid gap-12 md:grid-cols-4">
+      <Container className="pt-8">
+        <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-4">
 
           {/* Brand */}
           <div>
