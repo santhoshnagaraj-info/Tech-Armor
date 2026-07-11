@@ -1,24 +1,12 @@
 
 
-import {Headphones,
-  Smartphone,
-  BatteryCharging,
-  Shield,
-  Zap,
-  Radio,} from "lucide-react";
+import {Headphones, Smartphone, BatteryCharging, Shield, Zap, Radio,} from "lucide-react";
 import Container from "../ui/Container";
 import { CATEGORY_LINKS } from "@/src/lib/navigation";
 
 export default function Category() {
     
-const icons = [
-  Headphones,
-  Smartphone,
-  BatteryCharging,
-  Zap,
-  Radio,
-  Shield,
-];
+const icons = [ Headphones, Smartphone,BatteryCharging, Zap, Radio, Shield,];
 
     return(
     <div className="border-t border-cyan-900/30">
