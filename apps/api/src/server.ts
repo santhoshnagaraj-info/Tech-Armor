@@ -1,6 +1,6 @@
 import app from "./app";
 import connectDB from "./database/mongodb";
-import { env } from "node:process";
+import { env } from "./config/env";
 
 connectDB();
 
