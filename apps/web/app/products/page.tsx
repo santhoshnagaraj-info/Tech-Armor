@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import api from "@/src/lib/axios"
+import { API_URL } from "@/src/lib/api";
 
 async function getProduct(id: string) {
-    const URL = api.baseURL;
+
   const res = await fetch(
-    `{}/products/${id}`
+    `${API_URL}/products/${id}`
   );
 
   const data = await res.json();

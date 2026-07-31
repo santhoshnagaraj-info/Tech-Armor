@@ -17,7 +17,10 @@ app.use(express.json());
 
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
+
 app.use(notFound);
 app.use(errorMiddleware);
 
 export default app;
+
+
