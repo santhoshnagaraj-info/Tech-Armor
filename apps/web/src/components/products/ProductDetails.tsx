@@ -1,6 +1,6 @@
 "use client";
 
-import { useProducts } from "@/src/hooks/useProducts";
+import { useProduct } from "@/src/hooks/useProducts";
 import ProductGallery from "./ProductGallery";
 
 export default function ProductDetails({
@@ -9,7 +9,7 @@ export default function ProductDetails({
   id: string;
 }) {
   const { data: product, isLoading } =
-    useProducts(id);
+    useProduct(id);
 
   if (isLoading) {
     return <div>Loading...</div>;

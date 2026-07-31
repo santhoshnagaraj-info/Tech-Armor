@@ -17,5 +17,3 @@ export const useProduct = (id: string) => {
     enabled: !!id,
   });
 };
-
-
