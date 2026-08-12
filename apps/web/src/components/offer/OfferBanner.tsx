@@ -41,7 +41,7 @@ export default function OfferBanner({ offer }: Props) {
 
             {/* Right */}
 
-            <div className="relative flex h-[300px] items-center justify-center bg-gradient-to-br from-[#08131f] via-[#0a1b2e] to-[#071526]">
+            <div className="relative flex h-75 items-center justify-center bg-linear-to-br from-[#08131f] via-[#0a1b2e] to-[#071526]">
               <div className="absolute h-80 w-80 rounded-full bg-cyan-400/20 blur-[120px]" />
 
               <Image
@@ -58,3 +58,5 @@ export default function OfferBanner({ offer }: Props) {
     </section>
   );
 }
+
+

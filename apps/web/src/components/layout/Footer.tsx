@@ -19,6 +19,7 @@ export default function Footer() {
             </p>
           </div>
 
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-1 md:grid-cols-2">
           {/* Navigation */}
           <div>
             <h3 className="mb-6 font-bold uppercase tracking-wider text-white">
@@ -45,6 +46,7 @@ export default function Footer() {
               <li>Privacy</li>
               <li>Terms</li>
             </ul>
+          </div>
           </div>
 
           {/* Newsletter */}

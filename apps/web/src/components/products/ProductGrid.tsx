@@ -13,15 +13,16 @@ export default function ProductGrid() {
   }
 
   return (
-    <div id="products" className="min-h-screen bg-gray-100 text-center px-15 py-7">
-          <div className="grid grid-cols-5 gap-5">
+    <div id="products" className="p-15 text-center min-h-screen bg-gray-100 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 ">
       {products.map((product) => (
         <ProductCard
           key={product._id}
           {...product}
         />
       ))}
-    </div>
+      </div>
     </div>
   );
 }
+
