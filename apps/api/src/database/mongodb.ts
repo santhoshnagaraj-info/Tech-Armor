@@ -8,6 +8,7 @@ const connectDB = async () => {
     console.log("MongoDB Connected");
     console.log("Database:", mongoose.connection.name);
 
+    
   } catch (error) {
     console.log(error);
     process.exit(1);

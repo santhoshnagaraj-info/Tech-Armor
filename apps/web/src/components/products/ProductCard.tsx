@@ -2,14 +2,14 @@
 
 // src/components/product/ProductCard.tsx   
 
-import Link from "next/link";
+
 import Image from "next/image";
 import { Product } from "@/src/types/product";
 
 export default function ProductCard(product: Product) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-white/70 shadow-sm hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-      <Link href={`/products/${product._id}`}>
+      
         <div className="h-64 relative bg-gray-50 cursor-pointer items-center justify-center p-0 overflow-hidden">
         <Image  src={product.image}  alt={product.name}  width={800}  height={400} priority className="object-contain transition-transform duration-500 group-hover:scale-105"/>
          
@@ -38,7 +38,7 @@ export default function ProductCard(product: Product) {
           {/* </div> */}
         </div>
       </div>
-    </Link>
+    
     </div>
   );
 }

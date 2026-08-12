@@ -4,8 +4,8 @@ import { Search, ShoppingCart, UserCircle, } from "lucide-react";
 
 import Logo from "./logo";
 import NavMenu from "./NavMenu";
-import Container from "../ui/Container";
-import Category from "./Category";
+import Container from "../../ui/Container";
+import Category from "../Category";
 
 
 
