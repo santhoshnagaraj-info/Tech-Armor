@@ -1,26 +1,45 @@
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-
-
-import productRoutes from "./modules/products/product.routes";
-import categoryRoutes from "./modules/categories/category.routes";
+import helmet from "helmet";
+import { env } from "./config/env";
+import apiRouter from "./routes";
 import { notFound } from "./middlewares/notFound.middleware";
 import { errorMiddleware } from "./middlewares/error.middleware";
+import { requestLogger } from "./middlewares/requestLogger.middleware";
 
-dotenv.config();
-const app = express();
+export const createApp = (): Application => {
+  const app: Application = express();
 
-app.use(cors());
-app.use(express.json());
+  // 1. Security headers
+  app.use(helmet());
 
+  // 2. CORS configuration
+  app.use(
+    cors({
+      origin: env.ALLOWED_ORIGIN,
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization"],
+      credentials: true,
+    })
+  );
 
-app.use("/api/products", productRoutes);
-app.use("/api/categories", categoryRoutes);
+  // 3. Body parsers
+  app.use(express.json({ limit: "1mb" }));
+  app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 
-app.use(notFound);
-app.use(errorMiddleware);
+  // 4. Request logging
+  app.use(requestLogger);
 
-export default app;
+  // 5. Mount API routes
+  app.use("/api", apiRouter);
 
+  // 6. 404 handler
+  app.use(notFound);
 
+  // 7. Centralized error handling
+  app.use(errorMiddleware);
+
+  return app;
+};
+
+export default createApp();

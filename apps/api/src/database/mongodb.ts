@@ -1,20 +1,34 @@
 import mongoose from "mongoose";
 import { env } from "../config/env";
+import { logger } from "../utils/logger";
 
-const connectDB = async () => {
-  
+export const connectDB = async (): Promise<typeof mongoose> => {
   try {
-    await mongoose.connect(env.MONGO_URL as string);
-    console.log("MongoDB Connected");
-    console.log("Database:", mongoose.connection.name);
+    mongoose.set("strictQuery", true);
+    const conn = await mongoose.connect(env.MONGO_URL);
 
-    
+    logger.info({
+      msg: "MongoDB connected successfully",
+      host: conn.connection.host,
+      database: conn.connection.name,
+    });
+
+    mongoose.connection.on("error", (err) => {
+      logger.error({ msg: "MongoDB connection error", error: err });
+    });
+
+    mongoose.connection.on("disconnected", () => {
+      logger.warn({ msg: "MongoDB connection disconnected" });
+    });
+
+    return conn;
   } catch (error) {
-    console.log(error);
+    logger.fatal({ msg: "Failed to connect to MongoDB", error });
     process.exit(1);
   }
 };
 
-export default connectDB;
-
-
+export const disconnectDB = async (): Promise<void> => {
+  await mongoose.disconnect();
+  logger.info({ msg: "MongoDB disconnected gracefully" });
+};

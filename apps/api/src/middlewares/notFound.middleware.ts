@@ -1,13 +1,6 @@
+import { Request, Response, NextFunction } from "express";
+import { ApiError } from "../utils/ApiError";
 
-
-import { Request, Response } from "express";
-
-export const notFound = (
-  req: Request,
-  res: Response
-) => {
-  res.status(404).json({
-    success: false,
-    message: "Route Not Found",
-  });
+export const notFound = (req: Request, _res: Response, next: NextFunction): void => {
+  next(ApiError.notFound(`Cannot ${req.method} ${req.originalUrl}`));
 };

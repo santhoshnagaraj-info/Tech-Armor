@@ -1,40 +1,46 @@
-// apps/api/src/modules/products/product.controller.ts
-
-
 import { Request, Response } from "express";
-import * as service from "./product.service";
+import * as productService from "./product.service";
 import { successResponse } from "../../utils/ApiResponse";
 import { asyncHandler } from "../../utils/asyncHandler";
-
-export const createProduct = asyncHandler(
-  async (req: Request, res: Response) => {
-    const product = await service.createProduct(req.body);
-
-    res.status(201).json(successResponse(product, "Product Created"));
-  }
-);
+import { HttpStatus } from "../../constants/httpStatusCodes";
+import {
+  CreateProductInput,
+  UpdateProductInput,
+  ProductQueryParamsInput,
+} from "./product.validation";
 
 export const getProducts = asyncHandler(
   async (req: Request, res: Response) => {
-    const products = await service.getProducts();
-
-    res.json(successResponse(products));
+    const query = req.query as unknown as ProductQueryParamsInput;
+    const products = await productService.getProducts(query);
+    res.status(HttpStatus.OK).json(successResponse(products, "Products retrieved successfully"));
   }
 );
 
-export const getProductById = async (req: Request, res: Response) => {
-  const product = await service.getProductById(req.params.id);
-  res.status(200).json(product);
-};
+export const getProductById = asyncHandler(
+  async (req: Request<{ id: string }>, res: Response) => {
+    const product = await productService.getProductById(req.params.id);
+    res.status(HttpStatus.OK).json(successResponse(product, "Product retrieved successfully"));
+  }
+);
 
-export const updateProduct = async (req: Request, res: Response) => {
-  const product = await service.updateProduct(req.params.id, req.body);
-  res.status(200).json(product);
-};
+export const createProduct = asyncHandler(
+  async (req: Request<Record<string, never>, unknown, CreateProductInput>, res: Response) => {
+    const product = await productService.createProduct(req.body);
+    res.status(HttpStatus.CREATED).json(successResponse(product, "Product created successfully"));
+  }
+);
 
-export const deleteProduct = async ( req: Request, res: Response) => {
-  await service.deleteProduct(req.params.id);
-  res.status(200).json({message: "Deleted Successfully",});
-};
+export const updateProduct = asyncHandler(
+  async (req: Request<{ id: string }, unknown, UpdateProductInput>, res: Response) => {
+    const product = await productService.updateProduct(req.params.id, req.body);
+    res.status(HttpStatus.OK).json(successResponse(product, "Product updated successfully"));
+  }
+);
 
-
+export const deleteProduct = asyncHandler(
+  async (req: Request<{ id: string }>, res: Response) => {
+    await productService.deleteProduct(req.params.id);
+    res.status(HttpStatus.OK).json(successResponse(null, "Product deleted successfully"));
+  }
+);

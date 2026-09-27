@@ -1,19 +1,25 @@
-// src/types/product.ts 
+// src/types/product.ts
 
 export interface Product {
   _id?: string;
   name: string;
+  category?: string | { _id: string; name: string; slug?: string };
+  categories?: string; // UI backward compatibility
   description: string;
-  categories: string;    // change to catagories if that's what your API returns
   image: string;
   price: number;
-  discount: number;
-  createdAt: string;
-  updatedAt: string;
+  brand?: string;
+  rating?: number;
+  discount?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
-
-export interface ProductsResponse {
+export interface ApiResponse<T> {
   success: boolean;
-  data: Product[];
+  message?: string;
+  data: T;
 }
+
+export type ProductsResponse = ApiResponse<Product[]>;
+export type SingleProductResponse = ApiResponse<Product>;

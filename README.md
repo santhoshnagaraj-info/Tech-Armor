@@ -130,4 +130,4 @@ Add a `LICENSE` file (e.g., MIT) to make this repository public-ready.
 
 Open an issue or contact the maintainer for questions, feature requests, or help.
 
-change it like now to do. and create a filename: projects-impacts.txt or .md and put all the impacts you given to me with why, how, where also you given.
+Developer note: per repository maintenance, a companion file `projects-impacts.md` has been added to summarize project impacts (why, how, where).

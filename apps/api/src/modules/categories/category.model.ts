@@ -1,25 +1,36 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
+import { ICategory } from "./category.types";
 
-const categorySchema = new mongoose.Schema(
+export interface CategoryDocument extends Omit<ICategory, "_id">, Document {}
+
+const categorySchema = new Schema<CategoryDocument>(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, "Category name is required"],
       unique: true,
       trim: true,
+      minlength: [2, "Category name must be at least 2 characters"],
     },
-
     slug: {
       type: String,
-      required: true,
+      required: [true, "Slug is required"],
       unique: true,
       lowercase: true,
+      trim: true,
+      match: [/^[a-z0-9-]+$/, "Slug must only contain lowercase letters, numbers, and hyphens"],
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (_doc, ret) => {
+        delete (ret as { __v?: unknown }).__v;
+        return ret;
+      },
+    },
   }
 );
 
-export default mongoose.model("Category", categorySchema);
-
+export const CategoryModel = mongoose.model<CategoryDocument>("Category", categorySchema);
