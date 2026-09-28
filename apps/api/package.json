@@ -39,7 +39,14 @@
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   },
-  "keywords": ["ecommerce", "mobile-accessories", "api", "typescript", "express", "mongodb"],
+  "keywords": [
+    "ecommerce",
+    "mobile-accessories",
+    "api",
+    "typescript",
+    "express",
+    "mongodb"
+  ],
   "author": "",
   "license": "ISC"
 }

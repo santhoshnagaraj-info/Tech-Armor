@@ -37,7 +37,7 @@ export const validate = (
             });
             return;
           }
-          req.body = bodyResult.data;
+          Object.assign(req.body, bodyResult.data);
         }
 
         if (schemas.params) {
@@ -50,7 +50,7 @@ export const validate = (
             });
             return;
           }
-          req.params = paramsResult.data as Record<string, string>;
+          Object.assign(req.params, paramsResult.data as Record<string, string>);
         }
 
         if (schemas.query) {
@@ -63,7 +63,7 @@ export const validate = (
             });
             return;
           }
-          req.query = queryResult.data as Record<string, string>;
+          Object.assign(req.query, queryResult.data as Record<string, string>);
         }
       }
 
